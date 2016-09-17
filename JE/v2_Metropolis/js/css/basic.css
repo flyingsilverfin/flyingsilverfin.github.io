@@ -1,0 +1,170 @@
+@font-face {
+	font-family: VanadineBold;
+    src: url(../fonts/vanadine/VanadineBold.ttf);
+}
+
+@font-face {
+	font-family: Orchidee;
+	src: url(../fonts/orchidee/ORCHL___.TTF);
+}
+
+@font-face {
+	font-family: OrkneyLight;
+	src: url(../fonts/orkney_light/orkney_light.otf);
+}
+
+
+html {
+	font-family:OrkneyLight;
+	font-size: 1.2em;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-width:160px;
+	-webkit-font-smoothing: antialiased;
+}
+
+html,body {
+	background-color:Black;
+}
+
+h1 {
+	margin: 0;
+}
+
+li {
+}
+
+h4 {
+	padding: 0;
+	font-weight:normal;
+	font-size:1.1em;
+}
+
+p {
+	margin:0;
+}
+
+pre {
+	display:block;
+    white-space: pre;
+    margin: 0;
+	font-family:inherit;
+}
+
+
+a {
+	text-decoration: underline;
+	color: #ffffff;
+}
+a:hover{
+	color: #dddddd;
+}
+
+
+.notbold {
+	font-weight:normal;
+}
+
+.med-text {
+	/*font-size:1.15em;*/
+}
+
+.page-container {
+	text-align: center;
+	padding-bottom:2%;
+	z-index:3;
+	position:relative;
+}
+
+
+
+.page-title {
+	position:relative;
+	width:100%;
+	background-color:Black;
+	color: White;
+	padding-top:1%;
+	padding-bottom:1%;
+	font-size: 55px;
+	font-family: VanadineBold;
+	z-index:20;
+	/*	 alternative: border bottom on nav bar */
+	border-top: 1px solid #cccccc;
+	
+}
+
+
+	
+.background-image {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: -99;
+	width:100%;
+	height:100%;
+}
+
+.black-background {
+	background-color:Black;
+}
+
+
+.content-container-row {
+	min-height:650px;
+	overflow:hidden;
+	width:100%;
+	z-index:5;
+}
+
+.content-container {
+	width:60%;
+	display: inline-block;
+	vertical-align:top;	/* when inline blocks are side by side, make them top aligned */
+	padding:3%;
+	margin:7%;
+	min-width:300px;
+	z-index:5;
+
+	color: rgb(250,250,250);
+
+	
+	text-shadow: 0px 0px 6px rgba(0, 0, 0, 1);
+}
+
+
+.content-text {
+	display:block;
+	vertical-align:middle;
+}
+
+.container-halfsize {
+	width: 30%;
+	min-width:300px;
+	margin-left:4%;
+	margin-right:4%;
+}
+
+.wall-background {
+	background-image: url("../images/wall_small-light.jpg");
+	background-size:cover;
+	background-position: center center;
+}
+
+.wall-background-brown-low {
+	background-image: url("../images/wall_brown_small3.jpg");
+	background-size:cover;
+	background-position: center center;
+}
+
+.wall-background-brown {
+	background-image: url("../images/wall_brown_small.jpg");
+	background-size:cover;
+	background-position: center center;
+}
+
+.image {
+	width:100%;
+}
