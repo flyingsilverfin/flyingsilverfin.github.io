@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e53fe8fea0fbeff9b29d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "53a8489646dbe8ccebd8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -35278,7 +35278,7 @@
 	            var topicTiles = Object.keys(this.props.data).map(function (topic, i) {
 	                return _react2.default.createElement(
 	                    _reactRouter.Link,
-	                    { to: "/" + topic, key: i },
+	                    { to: "/KnowYourVote/" + topic, key: i },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: "topic-tile" + (_this2.state.active === topic ? " tile-active" : ""),
@@ -35567,7 +35567,7 @@
 	                    { className: 'topic-header' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/' },
+	                        { to: '/KnowYourVote/index.html' },
 	                        _react2.default.createElement(
 	                            'div',
 	                            { id: 'topic-header-home-button' },
@@ -37104,7 +37104,7 @@
 	                    { className: 'nav-link-container', key: i },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: "/" + _this2.state.path.slice(0, i + 1).join('/'), className: 'nav-link' },
+	                        { to: "/KnowYourVote/" + _this2.state.path.slice(0, i + 1).join('/'), className: 'nav-link' },
 	                        p
 	                    ),
 	                    _react2.default.createElement(
