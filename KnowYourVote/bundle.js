@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "53a8489646dbe8ccebd8"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3c0aaea7fe5223d90d0f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8228,8 +8228,8 @@
 	_reactDom2.default.render(_react2.default.createElement(
 		_reactRouter.Router,
 		{ history: _reactRouter.browserHistory },
-		_react2.default.createElement(_reactRouter.Route, { path: '/', component: _App2.default, data: _data2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/:topic', component: _App2.default, data: _data2.default })
+		_react2.default.createElement(_reactRouter.Route, { path: '/KnowYourVote/index.html', component: _App2.default, data: _data2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/KnowYourVote/:topic', component: _App2.default, data: _data2.default })
 	), document.getElementById('app'));
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(321); if (makeExportsHot(module, __webpack_require__(152))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
