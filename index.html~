@@ -2,47 +2,151 @@
 
 <head>
 
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 	<link type="text/css" rel="stylesheet" href="style.css" />
 
 </head>
 
 <body>
-	<section class="fullpage-section background-color--reddish">
-
-		<div class="vertical-align-middle">
-			Joshua Send
+	<section class="fullpage-section">
+		<div class="section-helper">
+			<div class="title-container half-width left vertical-align-middle bg-dark text-white">
+				<div id="name-container">
+					Joshua <br> Send.
+				</div>
+			</div>
+			<div class="section-content half-width vertical-align-middle bg-main-color">
+				About me
+			</div>
 		</div>
-
 
 	</section>
 	<section class="fullpage-section">
-		
-		Experience
+		<div class="section-helper">
+			<div class="title-container half-width left vertical-align-middle bg-main-color">
+				Experience
+			</div>
+			<div class="section-content half-width ">
+				<div class="experience-list">
+					<ul>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Autodesk
+								</div>
+								<div class="experience-subtitle">
+									Software Development Intern
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									TNG Technology Consulting
+								</div>
+								<div class="experience-subtitle">
+									Software Development Intern
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									San Diego State University
+								</div>
+								<div class="experience-subtitle">
+									Intern
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Birch Aquarium at Scripps 
+								</div>
+								<div class="experience-subtitle">
+									Intern
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									<a class="text-main-color" href="./JE/v1_TokyoToKyoto/index.html"> Tokyo to Kyoto </a>
+								</div>
+								<div class="experience-subtitle">
+									Version one of the 2016 Trinity Hall June Event website
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									<a class="text-main-color" href="./JE/v2_Metropolis/index.html"> Metropolis </a>
+								</div>
+								<div class="experience-subtitle">
+									Version one of the 2016 Trinity Hall June Event website
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Anvil.io
+								</div>
+								<div class="experience-subtitle">
+									Volunteer
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Trinity Hall Room Overview
+								</div>
+								<div class="experience-subtitle">
+									Improving the process of choosing a room in college
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Light Sync
+								</div>
+								<div class="experience-subtitle">
+									High power LED strips that sync to music
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Science Fair, Year 2
+								</div>
+								<div class="experience-subtitle">
+									Localizing impacts on a 2D surface in real time
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="experience-list-item">
+								<div class="experience-title">
+									Science Fair, Year 1
+								</div>
+								<div class="experience-subtitle">
+									Localizing impacts on a 1D surface in real time
+								</div>
+							</div>
+						</li>
+					</ul>
 
-		<div class="simple-list">
-			<ul>
-				<li>
-					<div class="experience-list-item">
-						<div class="experience-title">
-							Trinity Hall June Event 2016 - Tokyo to Kyoto
-						</div>
-					</div>
-					<div class="experience-list-item">
-						<div class="experience-title">
-							<a href="./JE/v1_TokyoToKyoto"> Trinity Hall June Event 2016 - Metropolis </a>
-						</div>
-							
-					</div>
-				</li>
-
-			</ul>
-
+				</div>
+			</div>
 		</div>
 
-
-	</section>
-	<section class="fullpage-section">
-		Contact
 	</section>
 </body>
 
