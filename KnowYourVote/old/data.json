@@ -33,7 +33,7 @@
             "backgroundColor": "#ff00ff"
         },
         "question" : "The goverment should have stronger immigration control",
-        "statusquo": ["The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people", "test", "test", "test3"],
+        "statusquo": ["The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people", "test"],
         "data": {
             "current": 4.0,
             "options": {
@@ -53,7 +53,7 @@
                     "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
                 },
                 "Other": {
-                    "value": 5.4,
+                    "value": 5.5,
                     "short": "Collision Test1",
                     "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
                 },

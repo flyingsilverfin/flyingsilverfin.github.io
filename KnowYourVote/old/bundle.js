@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "83dfe9f4b4dcd2015f21"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3c0aaea7fe5223d90d0f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -35164,6 +35164,7 @@
 
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
 
+	        console.log(_this.props);
 	        console.log('constructing app');
 
 	        _this.state = {
@@ -35294,6 +35295,7 @@
 	                            'div',
 	                            { className: 'topic-tile-image-container', title: _this2.state.active },
 	                            function () {
+	                                console.log('hi');
 	                                if (_this2.state.active === topic) {
 	                                    return _react2.default.createElement('img', { className: 'tile-image', src: _this2.props.data[topic].image });
 	                                }
@@ -35321,7 +35323,8 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { id: 'home-text' },
-	                        'This topic gets me going'
+	                        'This topic gets me going',
+	                        _react2.default.createElement('hr', { id: 'home-text-divider' })
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
@@ -35517,6 +35520,7 @@
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Topic).call(this, props));
 
 	        console.log("constructing Topic");
+	        console.log(_this.props);
 	        _this.state = {
 	            topic: _this.props.name,
 	            data: _this.props.data.data,
@@ -35563,7 +35567,7 @@
 	                    { className: 'topic-header' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/' },
+	                        { to: '/KnowYourVote/index.html' },
 	                        _react2.default.createElement(
 	                            'div',
 	                            { id: 'topic-header-home-button' },
@@ -35670,29 +35674,22 @@
 	                'div',
 	                { className: 'choice-pane' },
 	                _react2.default.createElement(
-	                    'ul',
-	                    null,
+	                    'div',
+	                    { className: 'choice-question' },
+	                    this.props.question
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'choice-input-container' },
 	                    _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        _react2.default.createElement('input', { className: 'choice-input', type: 'radio', id: 'f-option', name: 'selector' }),
-	                        _react2.default.createElement(
-	                            'label',
-	                            { htmlFor: 'f-option', onClick: this.leftClicked.bind(this) },
-	                            this.props.leftQuestion
-	                        ),
-	                        _react2.default.createElement('div', { className: 'check' })
+	                        'button',
+	                        { className: 'choice-button', onClick: this.leftClicked.bind(this) },
+	                        ' <- Less '
 	                    ),
 	                    _react2.default.createElement(
-	                        'li',
-	                        null,
-	                        _react2.default.createElement('input', { className: 'choice-input', type: 'radio', id: 's-option', name: 'selector' }),
-	                        _react2.default.createElement(
-	                            'label',
-	                            { htmlFor: 's-option', onClick: this.rightClicked.bind(this) },
-	                            this.props.rightQuestion
-	                        ),
-	                        _react2.default.createElement('div', { className: 'check' })
+	                        'button',
+	                        { className: 'choice-button', onClick: this.rightClicked.bind(this) },
+	                        ' More -> '
 	                    )
 	                )
 	            );
@@ -35737,10 +35734,6 @@
 
 	var _SpectrumOption2 = _interopRequireDefault(_SpectrumOption);
 
-	var _ChoicePane = __webpack_require__(325);
-
-	var _ChoicePane2 = _interopRequireDefault(_ChoicePane);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35766,11 +35759,7 @@
 	        _this.state = {
 	            parties: null,
 	            seed: 0,
-	            dividerPositionLeft: null,
-	            direction: null,
-	            minHeight: 0,
-	            maxHeight: 0,
-	            spectrumPaneHeight: 0
+	            dividerLabelLeft: null
 	        };
 	        return _this;
 	    }
@@ -35806,13 +35795,7 @@
 	            var _this2 = this;
 
 	            var options = this.state.parties.map(function (p, i) {
-	                return _react2.default.createElement(_SpectrumOption2.default, {
-	                    ref: p,
-	                    name: p,
-	                    values: _this2.props.options[p],
-	                    key: _this2.state.seed + i,
-	                    active: _this2.state.direction === null ? null : _this2.state.direction === 'left' && _this2.props.options[p].value <= _this2.props.currentValue || _this2.state.direction === 'right' && _this2.props.options[p].value >= _this2.props.currentValue ? true : false
-	                });
+	                return _react2.default.createElement(_SpectrumOption2.default, { ref: p, name: p, values: _this2.props.options[p], key: _this2.state.seed + i });
 	            });
 
 	            var dividerPosition = {
@@ -35832,61 +35815,64 @@
 	                'left': this.state.dividerPositionLeft
 	            };
 
-	            var spectrumPaneStyle = {
-	                'height': this.state.spectrumPaneHeight
-	            };
-
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { className: 'spectrum-pane-container' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'spectrum-pane-container' },
+	                    { ref: 'spectrumPane', className: 'spectrum-pane' },
 	                    _react2.default.createElement(
 	                        'div',
-	                        { id: 'label-container' },
+	                        { className: 'overlay-container' },
 	                        _react2.default.createElement(
-	                            'div',
-	                            { id: 'left-arrow', key: this.state.seed, ref: 'left-arrow', style: leftArrowStyle },
-	                            _react2.default.createElement(
-	                                'h2',
-	                                { className: 'inline slightly-larger-text' },
-	                                'LESS'
-	                            ),
-	                            ' advocating'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { id: 'right-arrow', key: this.state.seed + 1, ref: 'right-arrow', style: rightArrowStyle },
-	                            _react2.default.createElement(
-	                                'h2',
-	                                { className: 'inline slightly-larger-text' },
-	                                'MORE'
-	                            ),
-	                            ' advocating'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { id: 'current-value-divider-label', key: this.state.seed + 2, ref: 'divider-label', style: dividerLabelPosition },
-	                            _react2.default.createElement(
-	                                'h2',
-	                                { className: 'slightly-larger-text' },
-	                                'Current State of Affairs'
-	                            )
+	                            _reactAddonsCssTransitionGroup2.default,
+	                            { transitionName: 'overlay-slide', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
+	                            _react2.default.createElement('div', { ref: 'leftOverlay',
+	                                style: { right: 100 - this.props.currentValue / 10.0 * 100 + "%" },
+	                                className: 'spectrum-overlay overlay-slide-enter ' + (this.props.direction === 'left' ? 'overlay-slide-enter-active' : ''),
+	                                key: 0 }),
+	                            _react2.default.createElement('div', { ref: 'rightOverlay',
+	                                style: { left: this.props.currentValue / 10.0 * 100 + "%" },
+	                                className: 'spectrum-overlay overlay-slide-enter ' + (this.props.direction === 'right' ? 'overlay-slide-enter-active' : ''),
+	                                key: 1 })
 	                        )
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
-	                        { ref: 'spectrumPane', className: 'spectrum-pane', style: spectrumPaneStyle },
+	                        { id: 'left-arrow', key: this.state.seed, ref: 'left-arrow', style: leftArrowStyle },
 	                        _react2.default.createElement(
-	                            'div',
-	                            { id: 'current-value-divider', key: this.state.seed + 3, style: dividerPosition },
-	                            ' '
+	                            'h2',
+	                            { className: 'inline slightly-larger-text' },
+	                            'LESS'
 	                        ),
-	                        options
-	                    )
-	                ),
-	                _react2.default.createElement(_ChoicePane2.default, { onSelect: this.setDirection.bind(this), leftQuestion: 'Question left', rightQuestion: 'Question right' })
+	                        ' advocating'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'right-arrow', key: this.state.seed + 1, ref: 'right-arrow', style: rightArrowStyle },
+	                        _react2.default.createElement(
+	                            'h2',
+	                            { className: 'inline slightly-larger-text' },
+	                            'MORE'
+	                        ),
+	                        ' advocating'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'current-value-divider-label', key: this.state.seed + 2, ref: 'divider-label', style: dividerLabelPosition },
+	                        _react2.default.createElement(
+	                            'h2',
+	                            { className: 'slightly-larger-text' },
+	                            'Current State of Affairs'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'current-value-divider', key: this.state.seed + 3, style: dividerPosition },
+	                        ' '
+	                    ),
+	                    options
+	                )
 	            );
 	        }
 
@@ -35906,16 +35892,8 @@
 	        }
 	    }, {
 	        key: 'componentDidUpdate',
-	        value: function componentDidUpdate(prevProps, prevState) {
-	            // only want to redraw if certain state has changed
-	            if (prevState.seed != this.state.seed) {
-	                this.place();
-	            }
-	        }
-	    }, {
-	        key: 'setDirection',
-	        value: function setDirection(direction) {
-	            this.setState({ direction: direction });
+	        value: function componentDidUpdate() {
+	            this.place();
 	        }
 	    }, {
 	        key: 'placeDividerLabels',
@@ -35932,7 +35910,7 @@
 	            var left = parentWidth * this.state.dividerPositionLeft / 100;
 
 	            var labelLeft = 1 + left - width / 2;
-	            console.log("Going to position divider label from left:" + labelLeft);
+	            console.log("Going to position label from left:" + labelLeft);
 	            dividerLabelElement.style.left = labelLeft + "px";
 
 	            var leftArrowRef = this.refs['left-arrow'];
@@ -35965,26 +35943,20 @@
 
 	            var cd = new CollisionDetector();
 
+	            console.log(this.refs.spectrumPane);
 	            var container = _reactDom2.default.findDOMNode(this.refs.spectrumPane);
 
 	            var containerWidth = container.getBoundingClientRect().width;
 	            var containerHeight = container.getBoundingClientRect().height;
 
-	            console.log('SpectrumPane height: ' + containerHeight);
-
 	            var i = 0;
 
 	            // we're doing this CPS sort of styles
 	            // because setState does not occur immediately and we require the prior one to be placed before placing the next one
-	            // wow this the CPS actually works! Thank you compilers :o
+	            // holy this the CPS actually works! Thank you compilers :o
 	            var f = function (i, limit, cH, cW, cd, func) {
 	                console.log('CPS - depth ' + i);
 	                if (i === limit) {
-	                    this.setState({
-	                        spectrumPaneHeight: this.state.maxHeight - this.state.minHeight,
-	                        maxHeight: 0, // reset so it shrinks again if not needed next resize
-	                        minHeight: 0
-	                    });
 	                    return;
 	                } else {
 	                    this.placeItem(this.refs[this.state.parties[i]], cH, cW, cd, function () {
@@ -36002,10 +35974,7 @@
 	    }, {
 	        key: 'placeItem',
 	        value: function placeItem(ref, cHeight, cWidth, collisionDetector, callback) {
-
 	            var elem = _reactDom2.default.findDOMNode(ref);
-
-	            console.log('Placing item: ' + elem.innerHTML);
 
 	            var rect = elem.getBoundingClientRect();
 
@@ -36017,19 +35986,9 @@
 	            var toBeLeft = ref.props.values.value / 10.0 * cWidth - width / 2;
 
 	            var collisions = collisionDetector.collisions(toBeLeft, width);
-
-	            console.log('Collisions at given value: ');
-	            console.log(collisions);
-
 	            collisionDetector.insert(ref, toBeLeft, width);
 
 	            top = this.placeVertical(height, cHeight / 2, collisions);
-
-	            if (top < this.state.minHeight) {
-	                this.setState({ minHeight: top });
-	            }if (this.state.maxHeight < top + height) {
-	                this.setState({ maxHeight: top + height });
-	            }
 
 	            ref.setState({
 	                styles: {
@@ -36057,6 +36016,8 @@
 	                    // so it hasn't reendered yet so the bounding box isn't really up to date
 	                    // doesn't matter for height, matters for top!
 	                    // top should be set in state.styles.top = "valpx"
+
+	                    console.log(option.state.styles);
 
 	                    var top = parseInt(option.state.styles.top.slice(0, -2));
 	                    var _t = top - middle;
@@ -37005,7 +36966,7 @@
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(152); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -37016,10 +36977,6 @@
 	var _react = __webpack_require__(152);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	var _reactAddonsCssTransitionGroup = __webpack_require__(327);
-
-	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37039,8 +36996,6 @@
 
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SpectrumOption).call(this, props));
 
-	        console.log(props);
-
 	        _this.state = {
 	            styles: {
 	                top: 0,
@@ -37051,28 +37006,20 @@
 	    }
 
 	    _createClass(SpectrumOption, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
-	                { ref: 'child', className: 'spectrum-option', style: this.state.styles },
+	                "div",
+	                { ref: "child", className: "spectrum-option", style: this.state.styles },
 	                _react2.default.createElement(
-	                    _reactAddonsCssTransitionGroup2.default,
-	                    { transitionName: 'activate', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: "spectrum-option-enter spectrum-option-deactivate-enter" + (this.props.active === null ? '' : this.props.active ? ' spectrum-option-enter-activate' : ' spectrum-option-deactivate-enter-activate') },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'title' },
-	                            this.props.name
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'short' },
-	                            this.props.values.short
-	                        )
-	                    )
+	                    "div",
+	                    { className: "title" },
+	                    this.props.name
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "short" },
+	                    this.props.values.short
 	                )
 	            );
 	        }
@@ -37226,9 +37173,7 @@
 			"question": "The goverment should have stronger immigration control",
 			"statusquo": [
 				"The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people",
-				"test",
-				"test",
-				"test3"
+				"test"
 			],
 			"data": {
 				"current": 4,
@@ -37249,7 +37194,7 @@
 						"long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
 					},
 					"Other": {
-						"value": 5.4,
+						"value": 5.5,
 						"short": "Collision Test1",
 						"long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
 					},
