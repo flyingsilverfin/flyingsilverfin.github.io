@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "83dfe9f4b4dcd2015f21"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2b30e086f889da172bb8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -35563,7 +35563,7 @@
 	                    { className: 'topic-header' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/' },
+	                        { to: '/KnowYourVote/index.html' },
 	                        _react2.default.createElement(
 	                            'div',
 	                            { id: 'topic-header-home-button' },
