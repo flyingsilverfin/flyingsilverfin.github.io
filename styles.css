@@ -1,0 +1,316 @@
+@font-face {
+    font-family: josefin;
+    src: url('fonts/district_thin_pro/district_thin_pro/DistProTh.otf');
+    font-stretch: semi-expanded;
+}
+
+@font-face {
+    font-family: helveticaLight;
+    src: url('fonts/HelvLight-Regular/HELN.TTF');
+}
+
+
+@font-face {
+	font-family: VanadineBold;
+    src: url(../fonts/vanadine/VanadineBold.ttf);
+}
+
+@font-face {
+	font-family: OrkneyLight;
+    src: url(../fonts/orkney_light/orkney_light.otf);
+}
+
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #888888;
+    color:white;
+    /*font-family: Arial, Helvetica, sans-serif;
+ */
+
+    /*font-family: VanadineBold;
+    font-family: 'Open Sans', sans-serif; */
+/*    font-family: 'Alegreya Sans', sans-serif;*/
+    font-family: OrkneyLight;
+
+	word-wrap: break-word;
+}
+
+h1, h2, h3 {
+    margin:0;
+    padding:0;
+}
+
+
+iframe {
+    border: none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+p {
+ 
+}
+
+.fullpage-section {
+    clear: both;
+    min-height:100vh;
+}
+
+/*non-responsive variant*/
+.half-width {
+    width: 50%;
+    float: left;
+    height: 100vh;
+}
+
+.half-width-responsive {
+    width: 50%;
+    float: left;
+    height: 100vh;
+}
+
+
+.vertical-align-middle {
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	flex-direction: column;
+}
+
+.quarter-height {
+    height: 25%;
+}
+
+#selection-list {
+    border-right: 3px solid #009B7A;
+}
+
+.selection-list-sublist {
+    width:100%;
+}
+
+
+.selection-list-sublist-active {
+    color: black;
+    margin-top: 20px;
+    margin-bottom:20px;
+    transition: margin 0.5s, color 0.5s;
+}
+
+
+.selection-list-sublist-inactive {
+    color: gray;
+    transition: margin 0.5s, color 0.5s
+}
+
+.selection-list-entry {
+    text-align: center;
+    padding: 0.75vh;
+}
+
+
+
+.list-item-inactive {
+    font-size:1.1em;
+    transition: font-size 0.4s ease-in, padding 0.4s;
+}
+
+.list-item-hover {
+    font-size:1.2em;
+    transition: font-size 0.2s ease-in;
+}
+
+.list-item-active {
+    font-size: 1.5em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: font-size 0.4s ease-in, padding 0.4s;
+}
+
+
+
+.react-component-fade-enter {
+  opacity: 0.01;
+}
+
+.react-component-fade-enter.react-component-fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5ms ease-in;
+}
+
+.react-component-fade-leave {
+  opacity: 1;
+}
+
+.react-component-fade-leave.react-component-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+
+.react-component-fade-appear {
+  opacity: 0.01;
+}
+
+.react-component-fade-appear.react-component-fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.experience-display-container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding: 20px;
+    height: 100%;
+
+}
+
+.experience-display {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+.experience-display-heading {
+    flex: 1 1 auto;
+    position: relative;
+    height: 5vh;
+}
+
+.experience-display-heading-title {
+    display:inline-block;
+}
+
+.experience-display-heading-image {
+
+}
+
+.experience-display-description {
+    flex: 1 1 auto;
+    text-align:center;
+}
+
+.display-content-container {
+    max-width:100%;
+    width:100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    flex: 1 1 auto;
+}
+
+.display-content-container img {
+    max-height: 480px;
+}
+
+.display-content-container video {
+    width: 100%;
+    max-height: 480px;
+}
+
+/*
+    cool new ccs3 thing
+    conditional css rules
+    this one when width is less than 500px
+    removes float and expands width
+*/
+@media all and (max-width: 700px) {
+    .half-width-responsive {
+        width: 100%;
+        float: none;
+    }
+}
+
+/*
+    colors and font stuff
+*/
+
+.bg-color-main {
+    background-color: #009B7A;
+}
+
+.bg-color-main-fade-in {
+    background-color: #009B7A;
+    transition: background-color 0.5s;
+}
+
+.bg-color-dark {
+    background-color: #1A1A1A;
+}
+
+.bg-color-white {
+    background-color: #FFFFFF;
+}
+
+.font-color-main {
+    color: #009B7A;
+}
+
+
+.font-color-secondary {
+    color: #9b0021;
+}
+
+.font-color-black {
+    color: #000000;
+}
+
+.font-color-black-fade-in {
+    color: #000000;
+    transition: color 0.5s;
+}
+
+.font-color-white {
+    color: #FFFFFF;
+}
+
+.font-color-white-fade-in {
+    color: #FFFFFF;
+    transition: color 0.5s;
+}
+
+.font-size-large {
+    font-size: 4.5em;
+}
+
+
+
+.color-main-active {
+    background-color: #007058;
+    color: #FFFFFF;
+}
+
+.color-main-active-fade-in {
+    background-color: #007058;
+    color: FFFFFF;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/*
+    generic helpers
+*/
+
+.full-height {
+    height: 100%;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
