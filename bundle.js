@@ -16191,7 +16191,7 @@
 	                _react2.default.createElement(
 	                    "div",
 	                    { className: "align-left font-color-black" },
-	                    "I'm a finalist at the University of Cambridge <br> (this site is still under construction)",
+	                    "I'm a finalist at the University of Cambridge",
 	                    _react2.default.createElement("br", null),
 	                    " ",
 	                    _react2.default.createElement("br", null),
@@ -16199,7 +16199,9 @@
 	                        "a",
 	                        { className: "font-color-white", href: "./res/resume.pdf" },
 	                        " Resume "
-	                    )
+	                    ),
+						_react2.default.createElement("br", null),
+						"(this site is still under construction)"
 	                )
 	            );
 	        }
