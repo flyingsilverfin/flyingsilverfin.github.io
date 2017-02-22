@@ -16202,7 +16202,7 @@
 	                    ),
 	                    _react2.default.createElement("br", null),
 						{ className: "align-left font-color-black" },
-	                    "(This site is still under construction)",
+	                    "(This site is still under construction)"
 	                )
 	            );
 	        }
