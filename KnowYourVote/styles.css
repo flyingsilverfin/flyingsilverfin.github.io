@@ -107,7 +107,7 @@ align-items: center; /* align vertical */
     transform: translateY(-50%);
     height:1.0em;
     width:1.0em;
-    background-image: url('/images/hamburger.png');
+    background-image: url('/KnowYoureVote/images/hamburger.png');
     background-size: 100% 100%;
 }
 
