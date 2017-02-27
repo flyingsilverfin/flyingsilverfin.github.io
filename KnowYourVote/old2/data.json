@@ -1,0 +1,177 @@
+{
+    "environment" : {
+        "image": "images/env.png",
+        "styles" :{
+            "backgroundColor": "#00ff00"
+        },
+        "question" : "The goverment should do more for the environment",
+        "statusquo": ["The government has a limited commitment to cutting greenhouse gases, and water pollution"],
+        "data": {
+            "current": 3.0,
+            "options": {
+                "Conservative" : {
+                    "value": 2.5,
+                    "short": "More fossil fuels in return for cheaper energy, keep status quo with regards protected marine and land areas",
+                    "long": "blablablal asdkj slkda jfasjf ;asjflsajfd ;jsad ;fsafkjsa ;jf ;jdsa ;fljs ;lfdjsa;ld jf;lds jf;ljdsa ;flksa ;jflksajfd ;ljsa flksj ;fkjdsaf ;lsak jfd\n a;sjfd sk jfsajflkdjsa ;lsjd kfjsa lkfj;lsad jf;lsakd jf;lsakd jf;lsa jfa;sdlk j asjfd ;s"
+                    },
+                "Green" : {
+                    "value": 9.0,
+                    "short": "Cut greenhouse gases 80% by 2050",
+                    "long": "blablablal asdkj slkda jfasjf ;asjflsajfd ;jsad ;fsafkjsa ;jf ;jdsa ;fljs ;lfdjsa;ld jf;lds jf;ljdsa ;flksa ;jflksajfd ;ljsa flksj ;fkjdsaf ;lsak jfd\n a;sjfd sk jfsajflkdjsa ;lsjd kfjsa lkfj;lsad jf;lsakd jf;lsakd jf;lsa jfa;sdlk j asjfd ;s"
+                },
+                "Labor" : {
+                    "value": 6.0,
+                    "short": "blabla",
+                    "long": " aslkdjflksjdaf ;js k ja;ls jfdslk jflks jfls jds ;lsljsohjosah sfl;of jsoidjf ;sdf ;oidsj foisjdf ;oja;dsoijf ; "
+                }   
+            }
+        }
+    },
+    "immigration": {
+        "image": "images/immigration.png",
+        "styles" :{
+            "backgroundColor": "#ff00ff"
+        },
+        "question" : "The goverment should have stronger immigration control",
+        "statusquo": ["The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people", "test", "test", "test3"],
+        "data": {
+            "current": 4.0,
+            "options": {
+                "Labor" : {
+                    "value": 6.0,
+                    "short": "fun and happiness for all, but with strong background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Conservative": {
+                    "value": 5.0,
+                    "short": "Less fun and happiness for all, with stronger background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Green": {
+                    "value": 8.0,
+                    "short": "much fun and happiness for all, but with check later",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Other": {
+                    "value": 5.4,
+                    "short": "Collision Test1",
+                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                },
+                "Other2": {
+                    "value": 3.5,
+                    "short": "Collision Test2",
+                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                },
+                "Other3": {
+                    "value": 4.5,
+                    "short": "Collision Test3jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
+                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                },
+                "Other4": {
+                    "value": 3.7,
+                    "short": "Collision Test4 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
+                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                },
+                "Other5": {
+                    "value": 2.0,
+                    "short": "Collision Test5 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
+                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                },
+                "Other6": {
+                    "value": 2.4,
+                    "short": "Collision Test6 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
+                    "long" : "alsdkjfasdfsa fdsa dfsa df ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                },
+                "Other7": {
+                    "value": 5.4,
+                    "short": "Collision Test7 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
+                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
+                }
+            }
+        }
+    },
+    "a": {
+        "image": "images/immigration.png",
+        "styles" :{
+            "backgroundColor": "#ff00ff"
+        },
+        "question" : "The goverment should have stronger immigration control",
+        "statusquo": ["The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people"],
+        "data": {
+            "current": 4.0,
+            "options": {
+                "Labor" : {
+                    "value": 6.0,
+                    "short": "fun and happiness for all, but with strong background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Conservative": {
+                    "value": 5.0,
+                    "short": "Less fun and happiness for all, with stronger background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Green": {
+                    "value": 8.0,
+                    "short": "much fun and happiness for all, but with check later",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                }
+            }
+        }
+    },
+    "b": {
+        "image": "images/immigration.png",
+        "styles" :{
+            "backgroundColor": "#ff00ff"
+        },
+        "question" : "The goverment should have stronger immigration control",
+        "statusquo": "The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people",
+        "data": {
+            "current": 4.0,
+            "options": {
+                "Labor" : {
+                    "value": 6.0,
+                    "short": "fun and happiness for all, but with strong background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Conservative": {
+                    "value": 5.0,
+                    "short": "Less fun and happiness for all, with stronger background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Green": {
+                    "value": 8.0,
+                    "short": "much fun and happiness for all, but with check later",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                }
+            }
+        }
+    },
+    "c": {
+        "image": "images/immigration.png",
+        "styles" :{
+            "backgroundColor": "#ff00ff"
+        },
+        "question" : "The goverment should have stronger immigration control",
+        "statusquo": "The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people",
+        "data": {
+            "current": 4.0,
+            "options": {
+                "Labor" : {
+                    "value": 6.0,
+                    "short": "fun and happiness for all, but with strong background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Conservative": {
+                    "value": 5.0,
+                    "short": "Less fun and happiness for all, with stronger background checks",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                },
+                "Green": {
+                    "value": 8.0,
+                    "short": "much fun and happiness for all, but with check later",
+                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                }
+            }
+        }
+    }
+}

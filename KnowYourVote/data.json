@@ -1,175 +1,154 @@
 {
     "environment" : {
+        "name": "environment",
         "image": "images/env.png",
         "styles" :{
             "backgroundColor": "#00ff00"
         },
-        "question" : "The goverment should do more for the environment",
-        "statusquo": ["The government has a limited commitment to cutting greenhouse gases, and water pollution"],
+        "question-left" : "I think that we are doing enough or too much to protect our environment",
+        "question-right": "I think that we need to do more to protect our environment",
+        "statusquo": [
+            "Australia is currently are committed to reducing our carbon emissions by 28% by 2030",
+            "The Emissions Reduction Fund is in place to financially reward businesses and corporations that lower their carbon emissions",
+            "90% of the Great Barrier Reef has suffered from bleaching",
+            "It is currently legal to test products on animals",
+            "Australia is currently the 5th biggest carbon emitter per capita in the world"
+        ],
         "data": {
-            "current": 3.0,
+            "current": 5.0,
             "options": {
                 "Conservative" : {
-                    "value": 2.5,
-                    "short": "More fossil fuels in return for cheaper energy, keep status quo with regards protected marine and land areas",
-                    "long": "blablablal asdkj slkda jfasjf ;asjflsajfd ;jsad ;fsafkjsa ;jf ;jdsa ;fljs ;lfdjsa;ld jf;lds jf;ljdsa ;flksa ;jflksajfd ;ljsa flksj ;fkjdsaf ;lsak jfd\n a;sjfd sk jfsajflkdjsa ;lsjd kfjsa lkfj;lsad jf;lsakd jf;lsakd jf;lsa jfa;sdlk j asjfd ;s"
-                    },
+                    "value": 4.0,
+                    "short": "Relatively low environmental targets and fewer incentives for corporations to reduce carbon emissions",
+                    "subtopics": {
+                        "Climate Change" : [
+                            "Reduce emissions by 28% by 2030",
+                            "Emissions Reduction Fund to incentivise clean business",
+                            "No carbon tax"
+                        ],
+                        "Great Barrier Reef": [
+                            "Ban on dredging, $2B on reef protection",
+                            "Supports construction of the Adani Carmichael mine"
+                        ],
+                        "Renewable Energy": [
+                            "23% reliance on renewable energy by 2020",
+                            "$1B to target innovation projects into renewable energy transition"
+                        ],
+                        "Forests": [
+                            "20 million trees to be planted by 2020"
+                        ],
+                        "Animal Welfare": [
+                            "$190 million to protect endangered species"
+                        ]
+                    }
+                },
                 "Green" : {
-                    "value": 9.0,
-                    "short": "Cut greenhouse gases 80% by 2050",
-                    "long": "blablablal asdkj slkda jfasjf ;asjflsajfd ;jsad ;fsafkjsa ;jf ;jdsa ;fljs ;lfdjsa;ld jf;lds jf;ljdsa ;flksa ;jflksajfd ;ljsa flksj ;fkjdsaf ;lsak jfd\n a;sjfd sk jfsajflkdjsa ;lsjd kfjsa lkfj;lsad jf;lsakd jf;lsakd jf;lsa jfa;sdlk j asjfd ;s"
+                    "value": 10.0,
+                    "short": "Focus on environment, pro urgent climate action, pro renewable energy schemes and conservation of reefs and forests",
+                    "subtopics": {
+                        "Climate Change" : [
+                            "90% clean energy by 2030",
+                            "Supports a carbon tax",
+                            "Opposes Emissions Reduction Fund on the basis that it is paying polluting companies not to pollute"
+                        ],
+                        "Great Barrier Reef": [
+                            "$2.18B invested in reef protection",
+                            "Ban on future coal projects",
+                            "Increase water quality pollution control spending to $2B",
+                            "Introduce a national environmental watchdog",
+                            "Further shipping restrictions"
+                        ],
+                        "Renewable Energy": [
+                            "90% clean energy by 2030",
+                            "Ban on future coal projects and transition away from coal and gas with $1B clean energy transition fund"
+                        ],
+                        "Forests": [
+                            "Stop logging of all high conservation forests"
+                        ],
+                        "Animal Welfare": [
+                            "Ban animal testing, live exports, greyhound racing, selective breeding",
+                            "Reestablish a biodiversity fund",
+                            "$130M threatened species plan"
+                        ]
+                    }
                 },
                 "Labor" : {
-                    "value": 6.0,
-                    "short": "blabla",
-                    "long": " aslkdjflksjdaf ;js k ja;ls jfdslk jflks jfls jds ;lsljsohjosah sfl;of jsoidjf ;sdf ;oidsj foisjdf ;oja;dsoijf ; "
+                    "value": 7.0,
+                    "short": "Moderately environmentally focused, particularly regarding lowering carbon emissions",
+                    "subtopics": {
+                        "Climate Change" : [
+                            "Net zero pollution by 2050 through an Emissions Trading Scheme",
+                            "Opposes Emissions Reduction Fund on the basis it will increase emissions and waste money",
+                            "No carbon tax"
+                        ],
+                        "Great Barrier Reef": [
+                            "$500M invested in science and research, environmental investment and reef management",
+                            "Supports construction of the Adani Carmichael mine"
+                        ],
+                        "Renewable Energy": [
+                            "50% renewables by 2030",
+                            "Support transition to clean energy industry with a fund of $300M"
+                        ],
+                        "Forests": [
+                            "Expand world heritage listed areas"
+                        ],
+                        "Animal Welfare": [
+                            "Ban animal testing",
+                            "Introduce an independent office of animal welfare"
+                        ]
+                    }
                 }   
             }
         }
     },
-    "immigration": {
+    "workers-rights": {
+        "name": "Worker's Rights",
         "image": "images/immigration.png",
         "styles" :{
             "backgroundColor": "#ff00ff"
         },
-        "question" : "The goverment should have stronger immigration control",
-        "statusquo": ["The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people", "test", "test", "test3"],
+        "question-left" : "I think the current measures in place to protect workers and their wages are sufficient",
+        "question-right" : "I think the government needs to do more to protect workers and their wages",
+
+        "statusquo": [
+            "Sunday penalty rates for hospitality, fast food, pharmacy and retail employees are currently between 150%-200% depending on the industry and contract. Fair Work Australia has handed down a decision that means these penalty rates will decrease by between 25%-50% in the coming year.",
+            "Paid parental leave is currently available for up to 18 weeks."
+        ],
         "data": {
             "current": 4.0,
             "options": {
                 "Labor" : {
-                    "value": 6.0,
-                    "short": "fun and happiness for all, but with strong background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                    "value": 9.0,
+                    "short": "Heavy emphasis on employee rights and wage protections",
+                    "subtopics": {
+                        "Worker's Rights" : [
+                            "Oppose penalty rate reductions",
+                            "$20K per worker tax deduction for small business",
+                            "Increase the penalty for employers who underpay workers",
+                            "Provide $22.5 million in additional resources to the Fair Work Ombudsman",
+                            "Supports 18 weeks paid parental leave"
+                        ]
+                    }
                 },
                 "Conservative": {
-                    "value": 5.0,
-                    "short": "Less fun and happiness for all, with stronger background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Green": {
-                    "value": 8.0,
-                    "short": "much fun and happiness for all, but with check later",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Other": {
-                    "value": 5.4,
-                    "short": "Collision Test1",
-                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                },
-                "Other2": {
-                    "value": 3.5,
-                    "short": "Collision Test2",
-                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                },
-                "Other3": {
-                    "value": 4.5,
-                    "short": "Collision Test3jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
-                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                },
-                "Other4": {
-                    "value": 3.7,
-                    "short": "Collision Test4 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
-                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                },
-                "Other5": {
                     "value": 2.0,
-                    "short": "Collision Test5 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
-                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                },
-                "Other6": {
-                    "value": 2.4,
-                    "short": "Collision Test6 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
-                    "long" : "alsdkjfasdfsa fdsa dfsa df ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                },
-                "Other7": {
-                    "value": 5.4,
-                    "short": "Collision Test7 jf ;ldsa jlsaj d;lfjsa lfjas;ld jf",
-                    "long" : "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sa"
-                }
-            }
-        }
-    },
-    "a": {
-        "image": "images/immigration.png",
-        "styles" :{
-            "backgroundColor": "#ff00ff"
-        },
-        "question" : "The goverment should have stronger immigration control",
-        "statusquo": ["The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people"],
-        "data": {
-            "current": 4.0,
-            "options": {
-                "Labor" : {
-                    "value": 6.0,
-                    "short": "fun and happiness for all, but with strong background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Conservative": {
-                    "value": 5.0,
-                    "short": "Less fun and happiness for all, with stronger background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                    "short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+                    "subtopics": {
+                        "Worker's Rights" : [
+                            "Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+                            "Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+                        ]
+                    }
                 },
                 "Green": {
-                    "value": 8.0,
-                    "short": "much fun and happiness for all, but with check later",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                }
-            }
-        }
-    },
-    "b": {
-        "image": "images/immigration.png",
-        "styles" :{
-            "backgroundColor": "#ff00ff"
-        },
-        "question" : "The goverment should have stronger immigration control",
-        "statusquo": "The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people",
-        "data": {
-            "current": 4.0,
-            "options": {
-                "Labor" : {
-                    "value": 6.0,
-                    "short": "fun and happiness for all, but with strong background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Conservative": {
-                    "value": 5.0,
-                    "short": "Less fun and happiness for all, with stronger background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Green": {
-                    "value": 8.0,
-                    "short": "much fun and happiness for all, but with check later",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                }
-            }
-        }
-    },
-    "c": {
-        "image": "images/immigration.png",
-        "styles" :{
-            "backgroundColor": "#ff00ff"
-        },
-        "question" : "The goverment should have stronger immigration control",
-        "statusquo": "The government has stringent visa requirements and accepts 5% of asylum seekers - this year 1000 people",
-        "data": {
-            "current": 4.0,
-            "options": {
-                "Labor" : {
-                    "value": 6.0,
-                    "short": "fun and happiness for all, but with strong background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Conservative": {
-                    "value": 5.0,
-                    "short": "Less fun and happiness for all, with stronger background checks",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
-                },
-                "Green": {
-                    "value": 8.0,
-                    "short": "much fun and happiness for all, but with check later",
-                    "long": "alsdkjf ;lkdsjfsalkjf ;ldsa jlsaj d;lfjsa lfjas;ld jf;ldsa kjfsaf\n  ;saldjf; jdsfljsa ldfj ;sajd;f jsa;fdksa jf;lsaj fd;sla jf;lsa jf;lksa \nasd fjflsadjf lkdsajf ;lksa jfd;lksaj;lksa jfd;lksaj"
+                    "value": 7.0,
+                    "short": "Supports workers rights over those of businesses",
+                    "subtopics": {
+                        "Worker's Rights" : [
+                            "Oppose penalty rate reductions",
+                            "Advocates for 26 weeks paid parental leave"
+                        ]
+                    }
                 }
             }
         }
