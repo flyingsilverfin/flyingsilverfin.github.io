@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c0261d178311c7044bbe"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "23af013fbe3d80c43bb3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -37713,6 +37713,56 @@
 					},
 					"Conservative": {
 						"value": 2,
+						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+						"subtopics": {
+							"Worker's Rights": [
+								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+							]
+						}
+					},
+					"Test5": {
+						"value": 8,
+						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+						"subtopics": {
+							"Worker's Rights": [
+								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+							]
+						}
+					},
+					"Test4": {
+						"value": 2.5,
+						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+						"subtopics": {
+							"Worker's Rights": [
+								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+							]
+						}
+					},
+					"Test3": {
+						"value": 5.5,
+						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+						"subtopics": {
+							"Worker's Rights": [
+								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+							]
+						}
+					},
+					"Test2": {
+						"value": 6.8,
+						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+						"subtopics": {
+							"Worker's Rights": [
+								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+							]
+						}
+					},
+					"Test1": {
+						"value": 1,
 						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
 						"subtopics": {
 							"Worker's Rights": [
