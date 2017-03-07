@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "23af013fbe3d80c43bb3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fc46e9b748de81f215a0"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8202,10 +8202,6 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Topic = __webpack_require__(324);
-
-	var _Topic2 = _interopRequireDefault(_Topic);
-
 	var _data = __webpack_require__(340);
 
 	var _data2 = _interopRequireDefault(_data);
@@ -8235,8 +8231,8 @@
 	_reactDom2.default.render(_react2.default.createElement(
 		_reactRouter.Router,
 		{ history: _reactRouter.browserHistory },
-		_react2.default.createElement(_reactRouter.Route, { path: '/KnowYourVote/', component: _App2.default, data: _data2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: '/KnowYourVote/:topic', component: _App2.default, data: _data2.default })
+		_react2.default.createElement(_reactRouter.Route, { path: '/whatfloatsyourvote/', component: _App2.default, data: _data2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/whatfloatsyourvote/:topic', component: _App2.default, data: _data2.default })
 	), document.getElementById('app'));
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(321); if (makeExportsHot(module, __webpack_require__(152))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
@@ -35194,7 +35190,7 @@
 	            data: _this.props.route.data, // route contains the params passed to the Route
 	            humanPath: ['Home'],
 	            path: ['/'],
-	            display: _react2.default.createElement(_Home2.default, { data: _this.props.route.data })
+	            display: _react2.default.createElement(_Home2.default, { data: _this.props.route.data.topics })
 	        };
 	        return _this;
 	    }
@@ -35212,13 +35208,13 @@
 	                this.setState({
 	                    path: [''],
 	                    humanPath: ['Home'],
-	                    display: _react2.default.createElement(_Home2.default, { data: this.state.data })
+	                    display: _react2.default.createElement(_Home2.default, { data: this.state.data.topics })
 	                });
 	            } else {
 	                this.setState({
 	                    path: ['', nextTopic],
 	                    humanPath: ['Home', nextTopic],
-	                    display: _react2.default.createElement(_Topic2.default, { name: nextTopic, data: this.state.data[nextTopic] })
+	                    display: _react2.default.createElement(_Topic2.default, { name: nextTopic, data: this.state.data.topics[nextTopic], partyStyles: this.state.data.partyStyles })
 	                });
 	            }
 	        }
@@ -35289,6 +35285,7 @@
 	        _this.state = {
 	            active: null
 	        };
+	        console.log(props.data);
 	        return _this;
 	    }
 
@@ -35301,7 +35298,7 @@
 	            var topicTiles = Object.keys(this.props.data).map(function (topic, i) {
 	                return _react2.default.createElement(
 	                    _reactRouter.Link,
-	                    { to: "/KnowYourVote/" + topic, key: i },
+	                    { to: "/" + topic, key: i },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: "topic-tile" + (_this2.state.active === topic ? " tile-active" : ""),
@@ -35337,7 +35334,7 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'header' },
-	                    'What Floats YOUR Vote'
+	                    'What Floats Your Vote'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -35345,7 +35342,7 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { id: 'home-text' },
-	                        'Tell me about'
+	                        'Tell me about...'
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
@@ -35591,17 +35588,17 @@
 	                { className: 'topic-container' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'topic-header' },
+	                    { className: 'header' },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/KnowYourVote/' },
-	                        _react2.default.createElement('div', { id: 'topic-header-home-button' })
+	                        { to: '/whatfloatsyourvote/' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { id: 'topic-header-home-button' },
+	                            'Home'
+	                        )
 	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { id: 'topic-header-text' },
-	                        this.state.topic
-	                    )
+	                    'What Floats Your Vote'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -35615,7 +35612,13 @@
 	                            _react2.default.createElement(
 	                                'h2',
 	                                null,
-	                                ' Facts '
+	                                ' ',
+	                                _react2.default.createElement(
+	                                    'u',
+	                                    null,
+	                                    (0, _helper.capitalizeWord)(this.state.topic),
+	                                    ' '
+	                                )
 	                            ),
 	                            _react2.default.createElement(
 	                                'ol',
@@ -35625,8 +35628,8 @@
 	                        )
 	                    ),
 	                    _react2.default.createElement(_ChoicePane2.default, { ref: 'choice-pane', leftQuestion: this.props.data["question-left"], rightQuestion: this.props.data["question-right"], onSelect: this.setDirection.bind(this) }),
-	                    _react2.default.createElement(_SpectrumPane2.default, { topic: this.state.topic, currentValue: this.state.data.current, options: this.state.data.options, direction: this.state.direction, partySelected: this.partySelected.bind(this) }),
-	                    _react2.default.createElement(_Subtopics2.default, { options: this.state.data.options, activeParty: this.state.activeParty })
+	                    _react2.default.createElement(_SpectrumPane2.default, { topic: this.state.topic, currentValue: this.state.data.current, options: this.state.data.options, direction: this.state.direction, partySelected: this.partySelected.bind(this), partyStyles: this.props.partyStyles }),
+	                    _react2.default.createElement(_Subtopics2.default, { ref: 'subtopics-container', options: this.state.data.options, activeParty: this.state.activeParty })
 	                )
 	            );
 	        }
@@ -35649,6 +35652,13 @@
 	            this.setState({
 	                "activeParty": party
 	            });
+
+	            var subtopics = this.refs['subtopics-container'];
+	            subtopics = _reactDom2.default.findDOMNode(subtopics);
+
+	            $('html, body').animate({
+	                scrollTop: $(subtopics).offset().top
+	            }, 500);
 	        }
 	    }]);
 
@@ -35823,14 +35833,12 @@
 	                    return _react2.default.createElement(_SubtopicTitle2.default, {
 	                        key: i,
 	                        subtopic: subtopic,
+	                        active: _this2.state.activeSubtopic === subtopic,
 	                        onSelect: function () {
 	                            this.setState({ activeSubtopic: subtopic });
 	                        }.bind(_this2)
 	                    });
 	                });
-
-	                console.log(this.props.options[this.props.activeParty].subtopics);
-	                console.log(this.state.activeSubtopic);
 
 	                return _react2.default.createElement(
 	                    'div',
@@ -35898,9 +35906,12 @@
 	    _createClass(SubtopicTitle, [{
 	        key: "render",
 	        value: function render() {
+
+	            var style = this.props.active ? { "backgroundColor": "rgba(96,0,0,0.2)" } : {};
+
 	            return _react2.default.createElement(
 	                "div",
-	                { className: "subtopic-title", onClick: this.props.onSelect },
+	                { className: "subtopic-title", onClick: this.props.onSelect, style: style },
 	                this.props.subtopic
 	            );
 	        }
@@ -36046,7 +36057,9 @@
 	            //direction: null,
 	            minHeight: 0,
 	            maxHeight: 0,
-	            spectrumPaneHeight: 0
+	            spectrumPaneHeight: 0,
+	            optionsContainerStyle: {},
+	            selectedParty: null
 	        };
 	        return _this;
 	    }
@@ -36064,7 +36077,7 @@
 	            var parties = Object.keys(this.props.options);
 
 	            // we want to put Conservative, Labor, and Green at the front of the list for later
-	            var conservativesIndex = parties.indexOf('Conservative');
+	            var conservativesIndex = parties.indexOf('Liberal-National Coalition');
 	            this.swapElements(parties, conservativesIndex, 0);
 	            var laborIndex = parties.indexOf('Labor');
 	            this.swapElements(parties, laborIndex, 1);
@@ -36088,9 +36101,12 @@
 	                    values: _this2.props.options[p],
 	                    key: _this2.state.seed + i,
 	                    onClick: function () {
-	                        this.props.partySelected(p);
+	                        this.optionSelected(p);
 	                    }.bind(_this2),
-	                    active: _this2.props.direction === null ? null : _this2.props.direction === 'left' && _this2.props.options[p].value <= _this2.props.currentValue || _this2.props.direction === 'right' && _this2.props.options[p].value >= _this2.props.currentValue ? true : false
+	                    active: _this2.props.direction === null ? null : _this2.props.direction === 'left' && _this2.props.options[p].value <= _this2.props.currentValue || _this2.props.direction === 'right' && _this2.props.options[p].value >= _this2.props.currentValue ? true : false,
+	                    partyStyles: _this2.props.partyStyles,
+	                    partyName: p,
+	                    selected: _this2.state.selectedParty === p
 	                });
 	            });
 
@@ -36126,7 +36142,7 @@
 	                null,
 	                _react2.default.createElement(
 	                    'div',
-	                    null,
+	                    { style: { display: 'flex', justifyContent: 'center' } },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'spectrum-pane-container' },
@@ -36171,7 +36187,11 @@
 	                                { id: 'current-value-divider', key: this.state.seed + 3, style: dividerPosition },
 	                                ' '
 	                            ),
-	                            options
+	                            _react2.default.createElement(
+	                                'div',
+	                                { id: 'spectrum-options-container', style: this.state.optionsContainerStyle },
+	                                options
+	                            )
 	                        )
 	                    )
 	                )
@@ -36199,6 +36219,14 @@
 	            if (prevState.seed != this.state.seed) {
 	                this.place();
 	            }
+	        }
+	    }, {
+	        key: 'optionSelected',
+	        value: function optionSelected(party) {
+	            this.props.partySelected(party);
+	            this.setState({
+	                'selectedParty': party
+	            });
 	        }
 
 	        /*setDirection(direction) {
@@ -36238,8 +36266,8 @@
 	            var container = _reactDom2.default.findDOMNode(this.refs.spectrumPane);
 
 	            var containerWidth = container.getBoundingClientRect().width;
-	            var MIN_WIDTH = 1000;
-	            if (containerWidth > 1000) {
+	            var MIN_WIDTH = 900;
+	            if (containerWidth > 900) {
 	                this.setState({
 	                    seed: Math.random()
 	                });
@@ -36271,7 +36299,10 @@
 	                    this.setState({
 	                        spectrumPaneHeight: this.state.maxHeight - this.state.minHeight,
 	                        maxHeight: 0, // reset so it shrinks again if not needed next resize
-	                        minHeight: 0
+	                        minHeight: 0,
+	                        optionsContainerStyle: {
+	                            transform: "translate(0px," + -(this.state.minHeight + 5) + "px)"
+	                        }
 	                    });
 	                    return;
 	                } else {
@@ -37333,34 +37364,57 @@
 	            styles: {
 	                top: 0,
 	                left: 0
-	            }
+	            },
+	            selected: false
 	        };
+
 	        return _this;
 	    }
 
 	    _createClass(SpectrumOption, [{
 	        key: 'render',
 	        value: function render() {
+	            var bg = void 0;
+	            var transparency = void 0;
+	            var style = {};
+	            if (this.props.active === null) {
+	                transparency = 0.7;
+	            } else if (this.props.active) {
+	                transparency = 1.0;
+	            } else {
+	                transparency = 0.3;
+	            }
+
+	            if (this.props.partyStyles[this.props.partyName] !== undefined) {
+	                bg = this.props.partyStyles[this.props.partyName]["background-color"];
+	            } else {
+	                // default background color
+	                bg = [68, 68, 68];
+	            }
+
+	            if (this.props.selected) {
+	                style["border"] = "5px solid #600";
+	            } else {
+	                style["border"] = undefined;
+	            }
+
+	            var finalColor = "rgba(" + bg[0] + "," + bg[1] + "," + bg[2] + "," + transparency + ")";
+	            style["backgroundColor"] = finalColor;
+
+	            style = Object.assign(this.state.styles, style);
+
 	            return _react2.default.createElement(
 	                'div',
-	                { ref: 'child', className: 'spectrum-option', style: this.state.styles, onClick: this.props.onClick },
+	                { ref: 'child', className: 'spectrum-option', style: style, onClick: this.props.onClick },
 	                _react2.default.createElement(
-	                    _reactAddonsCssTransitionGroup2.default,
-	                    { transitionName: 'activate', transitionEnterTimeout: 500, transitionLeaveTimeout: 300 },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: "spectrum-option-enter spectrum-option-deactivate-enter" + (this.props.active === null ? '' : this.props.active ? ' spectrum-option-enter-activate' : ' spectrum-option-deactivate-enter-activate') },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'title' },
-	                            this.props.name
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'short' },
-	                            this.props.values.short
-	                        )
-	                    )
+	                    'div',
+	                    { className: 'title' },
+	                    this.props.name
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'short' },
+	                    this.props.values.short
 	                )
 	            );
 	        }
@@ -37386,6 +37440,7 @@
 	    value: true
 	});
 	exports.getCoords = getCoords;
+	exports.capitalizeWord = capitalizeWord;
 	var smooth_scroll_to = exports.smooth_scroll_to = function smooth_scroll_to(element, target, duration) {
 	    target = Math.round(target);
 	    duration = Math.round(duration);
@@ -37474,6 +37529,10 @@
 	    var left = box.left + scrollLeft - clientLeft;
 
 	    return { top: Math.round(top), left: Math.round(left) };
+	}
+
+	function capitalizeWord(str) {
+	    return str.substr(0, 1).toUpperCase() + str.substr(1);
 	}
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(321); if (makeExportsHot(module, __webpack_require__(152))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "helper.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
@@ -37581,204 +37640,229 @@
 /***/ function(module, exports) {
 
 	module.exports = {
-		"environment": {
-			"name": "environment",
-			"image": "images/env.png",
-			"styles": {
-				"backgroundColor": "#00ff00"
+		"partyStyles": {
+			"Liberal-National Coalition": {
+				"background-color": [
+					0,
+					85,
+					165
+				]
 			},
-			"question-left": "I think that we are doing enough or too much to protect our environment",
-			"question-right": "I think that we need to do more to protect our environment",
-			"statusquo": [
-				"Australia is currently are committed to reducing our carbon emissions by 28% by 2030",
-				"The Emissions Reduction Fund is in place to financially reward businesses and corporations that lower their carbon emissions",
-				"90% of the Great Barrier Reef has suffered from bleaching",
-				"It is currently legal to test products on animals",
-				"Australia is currently the 5th biggest carbon emitter per capita in the world"
-			],
-			"data": {
-				"current": 5,
-				"options": {
-					"Conservative": {
-						"value": 4,
-						"short": "Relatively low environmental targets and fewer incentives for corporations to reduce carbon emissions",
-						"subtopics": {
-							"Climate Change": [
-								"Reduce emissions by 28% by 2030",
-								"Emissions Reduction Fund to incentivise clean business",
-								"No carbon tax"
-							],
-							"Great Barrier Reef": [
-								"Ban on dredging, $2B on reef protection",
-								"Supports construction of the Adani Carmichael mine"
-							],
-							"Renewable Energy": [
-								"23% reliance on renewable energy by 2020",
-								"$1B to target innovation projects into renewable energy transition"
-							],
-							"Forests": [
-								"20 million trees to be planted by 2020"
-							],
-							"Animal Welfare": [
-								"$190 million to protect endangered species"
-							]
-						}
-					},
-					"Green": {
-						"value": 10,
-						"short": "Focus on environment, pro urgent climate action, pro renewable energy schemes and conservation of reefs and forests",
-						"subtopics": {
-							"Climate Change": [
-								"90% clean energy by 2030",
-								"Supports a carbon tax",
-								"Opposes Emissions Reduction Fund on the basis that it is paying polluting companies not to pollute"
-							],
-							"Great Barrier Reef": [
-								"$2.18B invested in reef protection",
-								"Ban on future coal projects",
-								"Increase water quality pollution control spending to $2B",
-								"Introduce a national environmental watchdog",
-								"Further shipping restrictions"
-							],
-							"Renewable Energy": [
-								"90% clean energy by 2030",
-								"Ban on future coal projects and transition away from coal and gas with $1B clean energy transition fund"
-							],
-							"Forests": [
-								"Stop logging of all high conservation forests"
-							],
-							"Animal Welfare": [
-								"Ban animal testing, live exports, greyhound racing, selective breeding",
-								"Reestablish a biodiversity fund",
-								"$130M threatened species plan"
-							]
-						}
-					},
-					"Labor": {
-						"value": 7,
-						"short": "Moderately environmentally focused, particularly regarding lowering carbon emissions",
-						"subtopics": {
-							"Climate Change": [
-								"Net zero pollution by 2050 through an Emissions Trading Scheme",
-								"Opposes Emissions Reduction Fund on the basis it will increase emissions and waste money",
-								"No carbon tax"
-							],
-							"Great Barrier Reef": [
-								"$500M invested in science and research, environmental investment and reef management",
-								"Supports construction of the Adani Carmichael mine"
-							],
-							"Renewable Energy": [
-								"50% renewables by 2030",
-								"Support transition to clean energy industry with a fund of $300M"
-							],
-							"Forests": [
-								"Expand world heritage listed areas"
-							],
-							"Animal Welfare": [
-								"Ban animal testing",
-								"Introduce an independent office of animal welfare"
-							]
+			"Green": {
+				"background-color": [
+					0,
+					255,
+					0
+				]
+			},
+			"Labor": {
+				"background-color": [
+					229,
+					54,
+					65
+				]
+			}
+		},
+		"topics": {
+			"environment": {
+				"name": "environment",
+				"image": "images/env.png",
+				"styles": {
+					"backgroundColor": "#00ff00"
+				},
+				"question-left": "I think that we are doing enough or too much to protect our environment",
+				"question-right": "I think that we need to do more to protect our environment",
+				"statusquo": [
+					"Australia is currently are committed to reducing our carbon emissions by 28% by 2030",
+					"The Emissions Reduction Fund is in place to financially reward businesses and corporations that lower their carbon emissions",
+					"90% of the Great Barrier Reef has suffered from bleaching",
+					"It is currently legal to test products on animals",
+					"Australia is currently the 5th biggest carbon emitter per capita in the world"
+				],
+				"data": {
+					"current": 5,
+					"options": {
+						"Liberal-National Coalition": {
+							"value": 4,
+							"short": "Relatively low environmental targets and fewer incentives for corporations to reduce carbon emissions",
+							"subtopics": {
+								"Climate Change": [
+									"Reduce emissions by 28% by 2030",
+									"Emissions Reduction Fund to incentivise clean business",
+									"No carbon tax"
+								],
+								"Great Barrier Reef": [
+									"Ban on dredging, $2B on reef protection",
+									"Supports construction of the Adani Carmichael mine"
+								],
+								"Renewable Energy": [
+									"23% reliance on renewable energy by 2020",
+									"$1B to target innovation projects into renewable energy transition"
+								],
+								"Forests": [
+									"20 million trees to be planted by 2020"
+								],
+								"Animal Welfare": [
+									"$190 million to protect endangered species"
+								]
+							}
+						},
+						"Green": {
+							"value": 10,
+							"short": "Focus on environment, pro urgent climate action, pro renewable energy schemes and conservation of reefs and forests",
+							"subtopics": {
+								"Climate Change": [
+									"90% clean energy by 2030",
+									"Supports a carbon tax",
+									"Opposes Emissions Reduction Fund on the basis that it is paying polluting companies not to pollute"
+								],
+								"Great Barrier Reef": [
+									"$2.18B invested in reef protection",
+									"Ban on future coal projects",
+									"Increase water quality pollution control spending to $2B",
+									"Introduce a national environmental watchdog",
+									"Further shipping restrictions"
+								],
+								"Renewable Energy": [
+									"90% clean energy by 2030",
+									"Ban on future coal projects and transition away from coal and gas with $1B clean energy transition fund"
+								],
+								"Forests": [
+									"Stop logging of all high conservation forests"
+								],
+								"Animal Welfare": [
+									"Ban animal testing, live exports, greyhound racing, selective breeding",
+									"Reestablish a biodiversity fund",
+									"$130M threatened species plan"
+								]
+							}
+						},
+						"Labor": {
+							"value": 7,
+							"short": "Moderately environmentally focused, particularly regarding lowering carbon emissions",
+							"subtopics": {
+								"Climate Change": [
+									"Net zero pollution by 2050 through an Emissions Trading Scheme",
+									"Opposes Emissions Reduction Fund on the basis it will increase emissions and waste money",
+									"No carbon tax"
+								],
+								"Great Barrier Reef": [
+									"$500M invested in science and research, environmental investment and reef management",
+									"Supports construction of the Adani Carmichael mine"
+								],
+								"Renewable Energy": [
+									"50% renewables by 2030",
+									"Support transition to clean energy industry with a fund of $300M"
+								],
+								"Forests": [
+									"Expand world heritage listed areas"
+								],
+								"Animal Welfare": [
+									"Ban animal testing",
+									"Introduce an independent office of animal welfare"
+								]
+							}
 						}
 					}
 				}
-			}
-		},
-		"workers-rights": {
-			"name": "Worker's Rights",
-			"image": "images/immigration.png",
-			"styles": {
-				"backgroundColor": "#ff00ff"
 			},
-			"question-left": "I think the current measures in place to protect workers and their wages are sufficient",
-			"question-right": "I think the government needs to do more to protect workers and their wages",
-			"statusquo": [
-				"Sunday penalty rates for hospitality, fast food, pharmacy and retail employees are currently between 150%-200% depending on the industry and contract. Fair Work Australia has handed down a decision that means these penalty rates will decrease by between 25%-50% in the coming year.",
-				"Paid parental leave is currently available for up to 18 weeks."
-			],
-			"data": {
-				"current": 4,
-				"options": {
-					"Labor": {
-						"value": 9,
-						"short": "Heavy emphasis on employee rights and wage protections",
-						"subtopics": {
-							"Worker's Rights": [
-								"Oppose penalty rate reductions",
-								"$20K per worker tax deduction for small business",
-								"Increase the penalty for employers who underpay workers",
-								"Provide $22.5 million in additional resources to the Fair Work Ombudsman",
-								"Supports 18 weeks paid parental leave"
-							]
-						}
-					},
-					"Conservative": {
-						"value": 2,
-						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-						"subtopics": {
-							"Worker's Rights": [
-								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-							]
-						}
-					},
-					"Test5": {
-						"value": 8,
-						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-						"subtopics": {
-							"Worker's Rights": [
-								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-							]
-						}
-					},
-					"Test4": {
-						"value": 2.5,
-						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-						"subtopics": {
-							"Worker's Rights": [
-								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-							]
-						}
-					},
-					"Test3": {
-						"value": 5.5,
-						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-						"subtopics": {
-							"Worker's Rights": [
-								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-							]
-						}
-					},
-					"Test2": {
-						"value": 6.8,
-						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-						"subtopics": {
-							"Worker's Rights": [
-								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-							]
-						}
-					},
-					"Test1": {
-						"value": 1,
-						"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-						"subtopics": {
-							"Worker's Rights": [
-								"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-								"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-							]
-						}
-					},
-					"Green": {
-						"value": 7,
-						"short": "Supports workers rights over those of businesses",
-						"subtopics": {
-							"Worker's Rights": [
-								"Oppose penalty rate reductions",
-								"Advocates for 26 weeks paid parental leave"
-							]
+			"workers-rights": {
+				"name": "Worker's Rights",
+				"image": "images/immigration.png",
+				"styles": {
+					"backgroundColor": "#ff00ff"
+				},
+				"question-left": "I think the current measures in place to protect workers and their wages are sufficient",
+				"question-right": "I think the government needs to do more to protect workers and their wages",
+				"statusquo": [
+					"Sunday penalty rates for hospitality, fast food, pharmacy and retail employees are currently between 150%-200% depending on the industry and contract. Fair Work Australia has handed down a decision that means these penalty rates will decrease by between 25%-50% in the coming year.",
+					"Paid parental leave is currently available for up to 18 weeks."
+				],
+				"data": {
+					"current": 4,
+					"options": {
+						"Labor": {
+							"value": 9,
+							"short": "Heavy emphasis on employee rights and wage protections",
+							"subtopics": {
+								"Worker's Rights": [
+									"Oppose penalty rate reductions",
+									"$20K per worker tax deduction for small business",
+									"Increase the penalty for employers who underpay workers",
+									"Provide $22.5 million in additional resources to the Fair Work Ombudsman",
+									"Supports 18 weeks paid parental leave"
+								]
+							}
+						},
+						"Liberal-National Coalition": {
+							"value": 2,
+							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+							"subtopics": {
+								"Worker's Rights": [
+									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+								]
+							}
+						},
+						"Test5": {
+							"value": 8,
+							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+							"subtopics": {
+								"Worker's Rights": [
+									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+								]
+							}
+						},
+						"Test4": {
+							"value": 2.5,
+							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+							"subtopics": {
+								"Worker's Rights": [
+									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+								]
+							}
+						},
+						"Test3": {
+							"value": 5.5,
+							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+							"subtopics": {
+								"Worker's Rights": [
+									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+								]
+							}
+						},
+						"Test2": {
+							"value": 6.8,
+							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+							"subtopics": {
+								"Worker's Rights": [
+									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+								]
+							}
+						},
+						"Test1": {
+							"value": 1,
+							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
+							"subtopics": {
+								"Worker's Rights": [
+									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
+									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
+								]
+							}
+						},
+						"Green": {
+							"value": 7,
+							"short": "Supports workers rights over those of businesses",
+							"subtopics": {
+								"Worker's Rights": [
+									"Oppose penalty rate reductions",
+									"Advocates for 26 weeks paid parental leave"
+								]
+							}
 						}
 					}
 				}
