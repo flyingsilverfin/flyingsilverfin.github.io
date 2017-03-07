@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fc46e9b748de81f215a0"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "15a766ea81302f3f8538"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -35298,7 +35298,7 @@
 	            var topicTiles = Object.keys(this.props.data).map(function (topic, i) {
 	                return _react2.default.createElement(
 	                    _reactRouter.Link,
-	                    { to: "/" + topic, key: i },
+	                    { to: "/whatfloatsyourvote/" + topic, key: i },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: "topic-tile" + (_this2.state.active === topic ? " tile-active" : ""),
