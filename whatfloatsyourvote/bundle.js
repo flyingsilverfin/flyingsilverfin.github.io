@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "15a766ea81302f3f8538"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e6c2ee864aa8ca70568d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8202,11 +8202,11 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _data = __webpack_require__(340);
+	var _data = __webpack_require__(341);
 
 	var _data2 = _interopRequireDefault(_data);
 
-	var _jquery = __webpack_require__(341);
+	var _jquery = __webpack_require__(342);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -35160,7 +35160,7 @@
 
 	var _Topic2 = _interopRequireDefault(_Topic);
 
-	var _Nav = __webpack_require__(339);
+	var _Nav = __webpack_require__(340);
 
 	var _Nav2 = _interopRequireDefault(_Nav);
 
@@ -35523,9 +35523,13 @@
 
 	var _SpectrumPane2 = _interopRequireDefault(_SpectrumPane);
 
+	var _PartiesKey = __webpack_require__(338);
+
+	var _PartiesKey2 = _interopRequireDefault(_PartiesKey);
+
 	var _reactRouter = __webpack_require__(257);
 
-	var _helper = __webpack_require__(338);
+	var _helper = __webpack_require__(339);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35583,6 +35587,8 @@
 	                );
 	            });
 
+	            var headingStyle = { "margin-left": "7%", "font-size": "1.3em", "margin-top": "20px" };
+
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'topic-container' },
@@ -35607,29 +35613,47 @@
 	                        'div',
 	                        { className: 'topic-description-container' },
 	                        _react2.default.createElement(
+	                            'h2',
+	                            { style: { "text-align": "center" } },
+	                            ' ',
+	                            (0, _helper.capitalizeWord)(this.state.topic)
+	                        ),
+	                        _react2.default.createElement(
+	                            'u',
+	                            { style: headingStyle },
+	                            ' Learn '
+	                        ),
+	                        _react2.default.createElement(
 	                            'div',
 	                            { className: 'topic-description' },
-	                            _react2.default.createElement(
-	                                'h2',
-	                                null,
-	                                ' ',
-	                                _react2.default.createElement(
-	                                    'u',
-	                                    null,
-	                                    (0, _helper.capitalizeWord)(this.state.topic),
-	                                    ' '
-	                                )
-	                            ),
 	                            _react2.default.createElement(
 	                                'ol',
 	                                null,
 	                                quolist
 	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { style: headingStyle },
+	                            _react2.default.createElement(
+	                                'u',
+	                                null,
+	                                'Choose'
+	                            )
+	                        ),
+	                        _react2.default.createElement(_ChoicePane2.default, { ref: 'choice-pane', leftQuestion: this.props.data["question-left"], rightQuestion: this.props.data["question-right"], onSelect: this.setDirection.bind(this) }),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { style: headingStyle },
+	                            _react2.default.createElement(
+	                                'u',
+	                                null,
+	                                'Explore'
+	                            ),
+	                            _react2.default.createElement(_PartiesKey2.default, { partyStyles: this.props.partyStyles })
 	                        )
 	                    ),
-	                    _react2.default.createElement(_ChoicePane2.default, { ref: 'choice-pane', leftQuestion: this.props.data["question-left"], rightQuestion: this.props.data["question-right"], onSelect: this.setDirection.bind(this) }),
-	                    _react2.default.createElement(_SpectrumPane2.default, { topic: this.state.topic, currentValue: this.state.data.current, options: this.state.data.options, direction: this.state.direction, partySelected: this.partySelected.bind(this), partyStyles: this.props.partyStyles }),
-	                    _react2.default.createElement(_Subtopics2.default, { ref: 'subtopics-container', options: this.state.data.options, activeParty: this.state.activeParty })
+	                    _react2.default.createElement(_SpectrumPane2.default, { topic: this.state.topic, currentValue: this.state.data.current, options: this.state.data.options, direction: this.state.direction, optionSelected: this.optionSelected.bind(this), partyStyles: this.props.partyStyles })
 	                )
 	            );
 	        }
@@ -35646,19 +35670,19 @@
 	            }, 500);
 	        }
 	    }, {
-	        key: 'partySelected',
-	        value: function partySelected(party) {
-	            console.log('party selected: ' + party);
-	            this.setState({
-	                "activeParty": party
+	        key: 'optionSelected',
+	        value: function optionSelected(party, subtopic) {
+	            console.log('party selected: ' + party + ', subtopic: ' + subtopic);
+	            /*this.setState({
+	                "activeParty" : party
 	            });
-
-	            var subtopics = this.refs['subtopics-container'];
-	            subtopics = _reactDom2.default.findDOMNode(subtopics);
-
+	              let subtopics = this.refs['subtopics-container'];
+	            subtopics = ReactDOM.findDOMNode(subtopics);
+	            
 	            $('html, body').animate({
 	                scrollTop: $(subtopics).offset().top
-	            }, 500);
+	            }, 500)
+	            */
 	        }
 	    }]);
 
@@ -36052,6 +36076,7 @@
 
 	        _this.state = {
 	            parties: null,
+	            subtopics: null,
 	            seed: 0,
 	            dividerPositionLeft: null,
 	            //direction: null,
@@ -36059,7 +36084,8 @@
 	            maxHeight: 0,
 	            spectrumPaneHeight: 0,
 	            optionsContainerStyle: {},
-	            selectedParty: null
+	            selectedParty: null,
+	            selectedTopic: null
 	        };
 	        return _this;
 	    }
@@ -36071,10 +36097,16 @@
 	                return;
 	            }
 	        }
+
+	        /*
+	            WARNING: EACH PARTY MUST CONTAIN THE SAME SUBTOPICS!!!!
+	        */
+
 	    }, {
 	        key: 'componentWillMount',
 	        value: function componentWillMount() {
 	            var parties = Object.keys(this.props.options);
+	            var subtopics = Object.keys(this.props.options[parties[0]].subtopics);
 
 	            // we want to put Conservative, Labor, and Green at the front of the list for later
 	            var conservativesIndex = parties.indexOf('Liberal-National Coalition');
@@ -36086,6 +36118,7 @@
 
 	            this.setState({
 	                parties: parties,
+	                subtopics: subtopics,
 	                dividerPositionLeft: 100 * (this.props.currentValue / 10.0) //percentage from left
 	            });
 	        }
@@ -36094,19 +36127,24 @@
 	        value: function render() {
 	            var _this2 = this;
 
+	            // the 'key' property now relies on each party having the same number of subtopics or they might not be unique
 	            var options = this.state.parties.map(function (p, i) {
-	                return _react2.default.createElement(_SpectrumOption2.default, {
-	                    ref: p,
-	                    name: p,
-	                    values: _this2.props.options[p],
-	                    key: _this2.state.seed + i,
-	                    onClick: function () {
-	                        this.optionSelected(p);
-	                    }.bind(_this2),
-	                    active: _this2.props.direction === null ? null : _this2.props.direction === 'left' && _this2.props.options[p].value <= _this2.props.currentValue || _this2.props.direction === 'right' && _this2.props.options[p].value >= _this2.props.currentValue ? true : false,
-	                    partyStyles: _this2.props.partyStyles,
-	                    partyName: p,
-	                    selected: _this2.state.selectedParty === p
+	                return Object.keys(_this2.props.options[p].subtopics).map(function (subtopic, j) {
+	                    return _react2.default.createElement(_SpectrumOption2.default, {
+	                        ref: p + "-" + subtopic,
+	                        name: subtopic,
+	                        facts: _this2.props.options[p].subtopics[subtopic].facts,
+	                        value: _this2.props.options[p].subtopics[subtopic].value,
+	                        key: _this2.state.seed + i * _this2.state.subtopics.length + j,
+	                        onClick: function () {
+	                            this.optionSelected(p, subtopic);
+	                        }.bind(_this2),
+	                        active: _this2.props.direction === null ? null : _this2.props.direction === 'left' && _this2.props.options[p].subtopics[subtopic].value <= _this2.props.currentValue || _this2.props.direction === 'right' && _this2.props.options[p].subtopics[subtopic].value >= _this2.props.currentValue ? true : false,
+	                        partyStyles: _this2.props.partyStyles,
+	                        partyName: p,
+	                        topicName: subtopic,
+	                        selected: _this2.state.selectedParty === p && _this2.state.selectedTopic === subtopic
+	                    });
 	                });
 	            });
 
@@ -36222,10 +36260,11 @@
 	        }
 	    }, {
 	        key: 'optionSelected',
-	        value: function optionSelected(party) {
-	            this.props.partySelected(party);
+	        value: function optionSelected(party, subtopic) {
+	            this.props.selectedOption(party, subtopic);
 	            this.setState({
-	                'selectedParty': party
+	                'selectedParty': party,
+	                'selectedTopic': subtopic
 	            });
 	        }
 
@@ -36293,9 +36332,14 @@
 	            // we're doing this CPS sort of styles
 	            // because setState does not occur immediately and we require the prior one to be placed before placing the next one
 	            // wow this the CPS actually works! Thank you compilers :o
-	            var f = function (i, limit, cH, cW, cd, func) {
-	                console.log('CPS - depth ' + i);
-	                if (i === limit) {
+	            var f = function (i, j, ilimit, jlimit, cH, cW, cd, func) {
+	                console.log('CPS - depth ' + i + ', ' + j);
+	                if (j === jlimit) {
+	                    j = 0;
+	                    i += 1;
+	                }
+	                // if finished (rolled over for the last time)
+	                if (i === ilimit) {
 	                    this.setState({
 	                        spectrumPaneHeight: this.state.maxHeight - this.state.minHeight,
 	                        maxHeight: 0, // reset so it shrinks again if not needed next resize
@@ -36306,13 +36350,14 @@
 	                    });
 	                    return;
 	                } else {
-	                    this.placeItem(this.refs[this.state.parties[i]], cH, cW, cd, function () {
-	                        func(i + 1, limit, cH, cW, cd, func);
+	                    console.log("placing: " + this.state.parties[i] + '-' + this.state.subtopics[j]);
+	                    this.placeItem(this.refs[this.state.parties[i] + '-' + this.state.subtopics[j]], cH, cW, cd, function () {
+	                        func(i, j + 1, ilimit, jlimit, cH, cW, cd, func);
 	                    });
 	                }
 	            }.bind(this);
 
-	            f(0, this.state.parties.length, containerHeight, containerWidth, cd, f);
+	            f(0, 0, this.state.parties.length, this.state.subtopics.length, containerHeight, containerWidth, cd, f);
 	        }
 
 	        // takes ref, container height/width, and collision detector
@@ -36333,7 +36378,7 @@
 	            var height = rect.height;
 	            var top = rect.top;
 
-	            var toBeLeft = ref.props.values.value / 10.0 * cWidth - width / 2;
+	            var toBeLeft = ref.props.value / 10.0 * cWidth - width / 2;
 
 	            var collisions = collisionDetector.collisions(toBeLeft, width);
 
@@ -37413,8 +37458,18 @@
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'short' },
-	                    this.props.values.short
+	                    { className: 'spectrum-option-facts' },
+	                    _react2.default.createElement(
+	                        'ul',
+	                        null,
+	                        this.props.facts.map(function (fact, i) {
+	                            return _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                fact
+	                            );
+	                        })
+	                    )
 	                )
 	            );
 	        }
@@ -37430,6 +37485,93 @@
 
 /***/ },
 /* 338 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(152); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(152);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(330);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// useful link: http://stackoverflow.com/questions/34660385/how-to-position-a-react-component-relative-to-its-parent
+
+	var SpectrumOption = function (_React$Component) {
+	    _inherits(SpectrumOption, _React$Component);
+
+	    function SpectrumOption(props) {
+	        _classCallCheck(this, SpectrumOption);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(SpectrumOption).call(this, props));
+	    }
+
+	    _createClass(SpectrumOption, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            debugger;
+	            var partyBlocks = Object.keys(this.props.partyStyles).map(function (party, i) {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { style: {
+	                            padding: "20px 50px 0 0px"
+	                        }
+	                    },
+	                    _react2.default.createElement('div', { style: {
+	                            width: "50px",
+	                            height: "1em",
+	                            backgroundColor: "rgb(" + _this2.props.partyStyles[party]["background-color"].join(',') + ")",
+	                            display: "inline-block",
+	                            value: "",
+	                            verticalAlign: "middle"
+	                        }
+	                    }),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { style: { display: "inline-block", marginLeft: "10px", verticalAlign: "middle" } },
+	                        party
+	                    )
+	                );
+	            });
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'parties-key' },
+	                partyBlocks
+	            );
+	        }
+	    }]);
+
+	    return SpectrumOption;
+	}(_react2.default.Component);
+
+	exports.default = SpectrumOption;
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(321); if (makeExportsHot(module, __webpack_require__(152))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "PartiesKey.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 339 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(152); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -37539,7 +37681,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 339 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(152); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -37609,7 +37751,7 @@
 	                    { className: 'nav-link-container', key: i },
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: "/KnowYourVote/" + _this2.state.path.slice(0, i + 1).join('/'), className: 'nav-link' },
+	                        { to: "/whatfloatsyourvote/" + _this2.state.path.slice(0, i + 1).join('/'), className: 'nav-link' },
 	                        p
 	                    ),
 	                    _react2.default.createElement(
@@ -37636,7 +37778,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 340 */
+/* 341 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -37651,7 +37793,7 @@
 			"Green": {
 				"background-color": [
 					0,
-					255,
+					190,
 					0
 				]
 			},
@@ -37683,185 +37825,124 @@
 					"current": 5,
 					"options": {
 						"Liberal-National Coalition": {
-							"value": 4,
-							"short": "Relatively low environmental targets and fewer incentives for corporations to reduce carbon emissions",
 							"subtopics": {
-								"Climate Change": [
-									"Reduce emissions by 28% by 2030",
-									"Emissions Reduction Fund to incentivise clean business",
-									"No carbon tax"
-								],
-								"Great Barrier Reef": [
-									"Ban on dredging, $2B on reef protection",
-									"Supports construction of the Adani Carmichael mine"
-								],
-								"Renewable Energy": [
-									"23% reliance on renewable energy by 2020",
-									"$1B to target innovation projects into renewable energy transition"
-								],
-								"Forests": [
-									"20 million trees to be planted by 2020"
-								],
-								"Animal Welfare": [
-									"$190 million to protect endangered species"
-								]
+								"Climate Change": {
+									"value": 4.8,
+									"facts": [
+										"Reduce emissions by 28% by 2030",
+										"Emissions Reduction Fund to incentivise clean business",
+										"No carbon tax"
+									]
+								},
+								"Great Barrier Reef": {
+									"value": 3.5,
+									"facts": [
+										"Ban on dredging, $2B on reef protection",
+										"Supports construction of the Adani Carmichael mine"
+									]
+								},
+								"Renewable Energy": {
+									"value": 4.5,
+									"facts": [
+										"23% reliance on renewable energy by 2020",
+										"$1B to target innovation projects into renewable energy transition"
+									]
+								},
+								"Forests": {
+									"value": 3.4,
+									"facts": [
+										"20 million trees to be planted by 2020"
+									]
+								},
+								"Animal Welfare": {
+									"value": 4,
+									"facts": [
+										"$190 million to protect endangered species"
+									]
+								}
 							}
 						},
 						"Green": {
-							"value": 10,
-							"short": "Focus on environment, pro urgent climate action, pro renewable energy schemes and conservation of reefs and forests",
 							"subtopics": {
-								"Climate Change": [
-									"90% clean energy by 2030",
-									"Supports a carbon tax",
-									"Opposes Emissions Reduction Fund on the basis that it is paying polluting companies not to pollute"
-								],
-								"Great Barrier Reef": [
-									"$2.18B invested in reef protection",
-									"Ban on future coal projects",
-									"Increase water quality pollution control spending to $2B",
-									"Introduce a national environmental watchdog",
-									"Further shipping restrictions"
-								],
-								"Renewable Energy": [
-									"90% clean energy by 2030",
-									"Ban on future coal projects and transition away from coal and gas with $1B clean energy transition fund"
-								],
-								"Forests": [
-									"Stop logging of all high conservation forests"
-								],
-								"Animal Welfare": [
-									"Ban animal testing, live exports, greyhound racing, selective breeding",
-									"Reestablish a biodiversity fund",
-									"$130M threatened species plan"
-								]
+								"Climate Change": {
+									"value": 9,
+									"facts": [
+										"90% clean energy by 2030",
+										"Supports a carbon tax",
+										"Opposes Emissions Reduction Fund - pays companies not to pollute"
+									]
+								},
+								"Great Barrier Reef": {
+									"value": 9.5,
+									"facts": [
+										"$2.18B for reef protection",
+										"Ban future coal projects",
+										"Increase water quality pollution control to $2B",
+										"New national environmental watchdog",
+										"Further shipping restrictions"
+									]
+								},
+								"Renewable Energy": {
+									"value": 9.6,
+									"facts": [
+										"90% clean energy by 2030",
+										"Ban on future coal projects",
+										"Transition away from coal and gas with $1B clean energy transition fund"
+									]
+								},
+								"Forests": {
+									"value": 8.5,
+									"facts": [
+										"Stop logging of all high conservation forests"
+									]
+								},
+								"Animal Welfare": {
+									"value": 9.6,
+									"facts": [
+										"Ban animal testing, live exports, greyhound racing, selective breeding",
+										"Reestablish a biodiversity fund",
+										"$130M threatened species plan"
+									]
+								}
 							}
 						},
 						"Labor": {
-							"value": 7,
-							"short": "Moderately environmentally focused, particularly regarding lowering carbon emissions",
 							"subtopics": {
-								"Climate Change": [
-									"Net zero pollution by 2050 through an Emissions Trading Scheme",
-									"Opposes Emissions Reduction Fund on the basis it will increase emissions and waste money",
-									"No carbon tax"
-								],
-								"Great Barrier Reef": [
-									"$500M invested in science and research, environmental investment and reef management",
-									"Supports construction of the Adani Carmichael mine"
-								],
-								"Renewable Energy": [
-									"50% renewables by 2030",
-									"Support transition to clean energy industry with a fund of $300M"
-								],
-								"Forests": [
-									"Expand world heritage listed areas"
-								],
-								"Animal Welfare": [
-									"Ban animal testing",
-									"Introduce an independent office of animal welfare"
-								]
-							}
-						}
-					}
-				}
-			},
-			"workers-rights": {
-				"name": "Worker's Rights",
-				"image": "images/immigration.png",
-				"styles": {
-					"backgroundColor": "#ff00ff"
-				},
-				"question-left": "I think the current measures in place to protect workers and their wages are sufficient",
-				"question-right": "I think the government needs to do more to protect workers and their wages",
-				"statusquo": [
-					"Sunday penalty rates for hospitality, fast food, pharmacy and retail employees are currently between 150%-200% depending on the industry and contract. Fair Work Australia has handed down a decision that means these penalty rates will decrease by between 25%-50% in the coming year.",
-					"Paid parental leave is currently available for up to 18 weeks."
-				],
-				"data": {
-					"current": 4,
-					"options": {
-						"Labor": {
-							"value": 9,
-							"short": "Heavy emphasis on employee rights and wage protections",
-							"subtopics": {
-								"Worker's Rights": [
-									"Oppose penalty rate reductions",
-									"$20K per worker tax deduction for small business",
-									"Increase the penalty for employers who underpay workers",
-									"Provide $22.5 million in additional resources to the Fair Work Ombudsman",
-									"Supports 18 weeks paid parental leave"
-								]
-							}
-						},
-						"Liberal-National Coalition": {
-							"value": 2,
-							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-							"subtopics": {
-								"Worker's Rights": [
-									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-								]
-							}
-						},
-						"Test5": {
-							"value": 8,
-							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-							"subtopics": {
-								"Worker's Rights": [
-									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-								]
-							}
-						},
-						"Test4": {
-							"value": 2.5,
-							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-							"subtopics": {
-								"Worker's Rights": [
-									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-								]
-							}
-						},
-						"Test3": {
-							"value": 5.5,
-							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-							"subtopics": {
-								"Worker's Rights": [
-									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-								]
-							}
-						},
-						"Test2": {
-							"value": 6.8,
-							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-							"subtopics": {
-								"Worker's Rights": [
-									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-								]
-							}
-						},
-						"Test1": {
-							"value": 1,
-							"short": "Focuses predominantly on tax incentives and cost cutting measures for business, rather than rights for employees.",
-							"subtopics": {
-								"Worker's Rights": [
-									"Reduce penalty rates for retail, hospitality, fast food and pharmacy workers",
-									"Youth Jobs PaTH program - 30,000 placements for young people in skills training and internships, $10K wage subsidy for businesses who hire young people under the scheme"
-								]
-							}
-						},
-						"Green": {
-							"value": 7,
-							"short": "Supports workers rights over those of businesses",
-							"subtopics": {
-								"Worker's Rights": [
-									"Oppose penalty rate reductions",
-									"Advocates for 26 weeks paid parental leave"
-								]
+								"Climate Change": {
+									"value": 6,
+									"facts": [
+										"Net zero pollution by 2050 through an Emissions Trading Scheme",
+										"Opposes Emissions Reduction Fund - increases emissions and wastes money",
+										"No carbon tax"
+									]
+								},
+								"Great Barrier Reef": {
+									"value": 4.5,
+									"facts": [
+										"$500M invested in science and research, environmental investment and reef management",
+										"Supports construction of the Adani Carmichael mine"
+									]
+								},
+								"Renewable Energy": {
+									"value": 6,
+									"facts": [
+										"50% renewables by 2030",
+										"Support transition to clean energy industry with a fund of $300M"
+									]
+								},
+								"Forests": {
+									"value": 5.1,
+									"facts": [
+										"Expand world heritage listed areas"
+									]
+								},
+								"Animal Welfare": {
+									"value": 5.2,
+									"facts": [
+										"Ban animal testing",
+										"Introduce an independent office of animal welfare"
+									]
+								}
 							}
 						}
 					}
@@ -37871,7 +37952,7 @@
 	};
 
 /***/ },
-/* 341 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
