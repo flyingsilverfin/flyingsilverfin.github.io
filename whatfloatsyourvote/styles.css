@@ -443,6 +443,7 @@ align-items: center; /* align vertical */
     max-width: 1000px;
     width:100%;
     margin: 0 auto;
+    min-height: 200px;
 }
 
 .subtopics-no-party-selected {
@@ -480,6 +481,8 @@ align-items: center; /* align vertical */
     display:inline-block;
     width:65%;
     font-size: 1.3em;
+    display: flex;
+    align-items: center;
 }
 
 .subtopic-facts-container li {

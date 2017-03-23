@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e6c2ee864aa8ca70568d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a52247077131dbe29a6b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -35515,9 +35515,9 @@
 
 	var _ChoicePane2 = _interopRequireDefault(_ChoicePane);
 
-	var _Subtopics = __webpack_require__(326);
+	var _DetailedSubtopicFacts = __webpack_require__(326);
 
-	var _Subtopics2 = _interopRequireDefault(_Subtopics);
+	var _DetailedSubtopicFacts2 = _interopRequireDefault(_DetailedSubtopicFacts);
 
 	var _SpectrumPane = __webpack_require__(329);
 
@@ -35653,7 +35653,8 @@
 	                            _react2.default.createElement(_PartiesKey2.default, { partyStyles: this.props.partyStyles })
 	                        )
 	                    ),
-	                    _react2.default.createElement(_SpectrumPane2.default, { topic: this.state.topic, currentValue: this.state.data.current, options: this.state.data.options, direction: this.state.direction, optionSelected: this.optionSelected.bind(this), partyStyles: this.props.partyStyles })
+	                    _react2.default.createElement(_SpectrumPane2.default, { topic: this.state.topic, currentValue: this.state.data.current, options: this.state.data.options, direction: this.state.direction, optionSelected: this.optionSelected.bind(this), partyStyles: this.props.partyStyles }),
+	                    _react2.default.createElement(_DetailedSubtopicFacts2.default, { ref: 'subtopics-container', options: this.state.data.options, activeParty: this.state.activeParty, activeSubtopic: this.state.activeTopic })
 	                )
 	            );
 	        }
@@ -35673,16 +35674,17 @@
 	        key: 'optionSelected',
 	        value: function optionSelected(party, subtopic) {
 	            console.log('party selected: ' + party + ', subtopic: ' + subtopic);
-	            /*this.setState({
-	                "activeParty" : party
+	            this.setState({
+	                "activeParty": party,
+	                "activeTopic": subtopic
 	            });
-	              let subtopics = this.refs['subtopics-container'];
-	            subtopics = ReactDOM.findDOMNode(subtopics);
-	            
+
+	            var subtopics = this.refs['subtopics-container'];
+	            subtopics = _reactDom2.default.findDOMNode(subtopics);
+
 	            $('html, body').animate({
 	                scrollTop: $(subtopics).offset().top
-	            }, 500)
-	            */
+	            }, 500);
 	        }
 	    }]);
 
@@ -35824,45 +35826,27 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Subtopics = function (_React$Component) {
-	    _inherits(Subtopics, _React$Component);
+	var DetailedSubtopicfacts = function (_React$Component) {
+	    _inherits(DetailedSubtopicfacts, _React$Component);
 
-	    function Subtopics(props) {
-	        _classCallCheck(this, Subtopics);
+	    function DetailedSubtopicfacts(props) {
+	        _classCallCheck(this, DetailedSubtopicfacts);
 
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Subtopics).call(this, props));
-
-	        _this.state = {
-	            activeSubtopic: null
-	        };
-	        return _this;
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(DetailedSubtopicfacts).call(this, props));
 	    }
 
-	    _createClass(Subtopics, [{
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps(nextProps) {
-	            if (nextProps.activeParty !== null) {
-	                this.setState({
-	                    activeSubtopic: Object.keys(nextProps.options[nextProps.activeParty].subtopics)[0]
-	                });
-	            }
-	        }
-	    }, {
+	    _createClass(DetailedSubtopicfacts, [{
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
 
-	            if (this.props.activeParty !== null) {
-	                var subtopicComponents = Object.keys(this.props.options[this.props.activeParty].subtopics).map(function (subtopic, i) {
-	                    return _react2.default.createElement(_SubtopicTitle2.default, {
-	                        key: i,
-	                        subtopic: subtopic,
-	                        active: _this2.state.activeSubtopic === subtopic,
-	                        onSelect: function () {
-	                            this.setState({ activeSubtopic: subtopic });
-	                        }.bind(_this2)
-	                    });
-	                });
+	            debugger;
+	            if (!this.props.activeParty || !this.props.activeSubtopic) {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { className: 'subtopics-no-party-selected' },
+	                    'Select a box above for more'
+	                );
+	            } else {
 
 	                return _react2.default.createElement(
 	                    'div',
@@ -35870,26 +35854,20 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'subtopic-titles-container' },
-	                        subtopicComponents
+	                        _react2.default.createElement(_SubtopicTitle2.default, { subtopic: this.props.activeSubtopic })
 	                    ),
-	                    _react2.default.createElement(_SubtopicData2.default, { facts: this.props.options[this.props.activeParty].subtopics[this.state.activeSubtopic] })
-	                );
-	            } else {
-	                return _react2.default.createElement(
-	                    'div',
-	                    { className: 'subtopics-no-party-selected' },
-	                    'Select a party above to view more'
+	                    _react2.default.createElement(_SubtopicData2.default, { facts: this.props.options[this.props.activeParty].subtopics[this.props.activeSubtopic].facts })
 	                );
 	            }
 	        }
 	    }]);
 
-	    return Subtopics;
+	    return DetailedSubtopicfacts;
 	}(_react2.default.Component);
 
-	exports.default = Subtopics;
+	exports.default = DetailedSubtopicfacts;
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(321); if (makeExportsHot(module, __webpack_require__(152))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Subtopics.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(321); if (makeExportsHot(module, __webpack_require__(152))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "DetailedSubtopicFacts.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
@@ -36261,7 +36239,7 @@
 	    }, {
 	        key: 'optionSelected',
 	        value: function optionSelected(party, subtopic) {
-	            this.props.selectedOption(party, subtopic);
+	            this.props.optionSelected(party, subtopic);
 	            this.setState({
 	                'selectedParty': party,
 	                'selectedTopic': subtopic
@@ -37459,17 +37437,7 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'spectrum-option-facts' },
-	                    _react2.default.createElement(
-	                        'ul',
-	                        null,
-	                        this.props.facts.map(function (fact, i) {
-	                            return _react2.default.createElement(
-	                                'li',
-	                                null,
-	                                fact
-	                            );
-	                        })
-	                    )
+	                    _react2.default.createElement('ul', null)
 	                )
 	            );
 	        }
@@ -37529,7 +37497,6 @@
 	        value: function render() {
 	            var _this2 = this;
 
-	            debugger;
 	            var partyBlocks = Object.keys(this.props.partyStyles).map(function (party, i) {
 	                return _react2.default.createElement(
 	                    'div',
