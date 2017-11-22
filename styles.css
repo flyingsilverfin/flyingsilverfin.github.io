@@ -44,6 +44,10 @@ h1, h2, h3 {
     padding:0;
 }
 
+a {
+    color: white
+}
+
 
 iframe {
     border: none;
@@ -295,6 +299,20 @@ p {
     transition: background-color 0.5s, color 0.5s;
 }
 
+
+
+.clickable_image {
+    -webkit-box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 4px 6px 0px rgba(0,0,0,0.75);
+    transition: all 0.3s ease-in-out;    
+}
+
+.clickable_image:hover {
+    -webkit-box-shadow: 6px 12px 6px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 12px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 6px 12px 6px 0px rgba(0,0,0,0.75);
+}
 /*
     generic helpers
 */
@@ -313,4 +331,8 @@ p {
 
 .align-center {
     text-align: center;
+}
+
+.blue {
+    color: blue;
 }
