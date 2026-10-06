@@ -49,6 +49,17 @@ a {
     color: #009B7A;
 }
 
+.contact {
+    position: relative;
+}
+
+.contact a.old-site {
+    position: absolute;
+    bottom: 16px;
+    font-size: 0.6em;
+    color: #888888;
+}
+
 @media all and (max-width: 700px) {
     .half-width {
         width: 100%;
