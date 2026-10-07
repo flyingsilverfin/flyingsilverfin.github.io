@@ -53,6 +53,31 @@ a {
     position: relative;
 }
 
+.linktree {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+    max-width: 440px;
+    margin-bottom: 40px;
+}
+
+.contact .linktree a {
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid #009B7A;
+    border-radius: 999px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.contact .linktree a:hover {
+    background-color: #009B7A;
+    color: #FFFFFF;
+}
+
 .contact a.old-site {
     position: absolute;
     bottom: 16px;
